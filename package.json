@@ -1,6 +1,6 @@
 {
   "name": "pskeyword",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Play Store Keyword Finder",
   "main": "src/main.js",
   "scripts": {
