@@ -27,7 +27,7 @@ function buildPackage(callback) {
 
 function createDMG(callback) {
     electronDMGInstaller({
-        appPath: 'build/PSKeyword-darwin-x64',
+        appPath: 'build/pskeyword-darwin-x64/pskeyword.app',
         name: 'PSKeyword-darwin-x64',
         out: 'dist'
     }, () => {
