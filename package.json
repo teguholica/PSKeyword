@@ -1,0 +1,21 @@
+{
+  "name": "pskeyword",
+  "version": "1.0.0",
+  "description": "Play Store Keyword Finder",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Teguh Arifianto",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "electron-packager": "^10.1.0"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "google-play-scraper": "^4.0.0",
+    "jquery": "^3.2.1"
+  }
+}
