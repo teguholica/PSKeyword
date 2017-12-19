@@ -1,14 +1,9 @@
-How to Start
+Require
+- Execute `npm install`
 
-- npm install
-- npm start
+How to Run
+- Execute `npm start`
 
-How to build (MacOS and Windows)
-
-Install this package first
-- npm install electron-packager -g
-
-Then Run this command
-- electron-packager . "PSKeyword" --platform=darwin,win32 --arch=x64
-
-*Note: For MacOS, you must install wine. You can install it via homebrew
+How to Build
+- For MacOS, you must install wine. You can install it via homebrew
+- Execute `npm build`
