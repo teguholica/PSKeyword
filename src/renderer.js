@@ -1,9 +1,15 @@
 const gplay = require('google-play-scraper')
 const async = require('async')
+const fs = require('fs')
 
 const chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','10']
 
+onLoad();
+
 $('button').click(() => {
+    console.log($('#countryView').val());
+    console.log($('#langView').val());
+
     const keyword = $('input').val()
 
     clearTable()
@@ -32,8 +38,41 @@ $('button').click(() => {
     })
 })
 
+function onLoad() {
+    let rawdata = fs.readFileSync(__dirname + '/config.json')
+    let config = JSON.parse(rawdata)
+
+    config.country.forEach(country => {
+        let selected = '';
+        if (country.code === 'us') {
+            selected = 'selected';
+        }
+        $('#countryView').append(`
+            <option value='${country.code}' ${selected}>
+                <td>${country.name}</td>
+            </tr>
+        `)
+    })
+
+    config.lang.forEach(lang => {
+        let selected = '';
+        if (lang.code === 'en') {
+            selected = 'selected';
+        }
+        $('#langView').append(`
+            <option value='${lang.code}' ${selected}>
+                <td>${lang.name}</td>
+            </tr>
+        `)
+    })
+}
+
 function getSuggests(keyword, callback) {
-    gplay.suggest({term: keyword}).then(function(response) {
+    gplay.suggest({
+        term: keyword,
+        country: $('#countryView').val(),
+        lang: $('#langView').val()
+    }).then(function(response) {
         callback(null, response)
     })
 }

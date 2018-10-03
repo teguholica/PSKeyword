@@ -1,6 +1,6 @@
 {
   "name": "pskeyword",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Play Store Keyword Finder",
   "main": "src/main.js",
   "scripts": {
@@ -12,12 +12,12 @@
   "author": "Teguh Arifianto",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^1.7.12",
-    "electron-packager": "^10.1.2"
+    "electron": "^3.0.2",
+    "electron-packager": "^12.1.2"
   },
   "dependencies": {
-    "async": "^2.6.0",
-    "google-play-scraper": "^4.0.0",
+    "async": "^2.6.1",
+    "google-play-scraper": "^6.2.0",
     "jquery": "^3.3.1"
   }
 }
